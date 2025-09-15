@@ -198,6 +198,7 @@
             const submitButton = document.getElementById('submit-button');
             const formMessage = document.getElementById('form-message');
             const webhookUrl = 'https://webhook.wipti.com/webhook/1656dd26-a811-4e62-9274-8be13142db66';
+            const redirectUrl = 'https://chat.whatsapp.com/CKRAfEmfniKJsrVbaCvk6V';
 
             form.addEventListener('submit', async (event) => {
                 event.preventDefault();
@@ -238,10 +239,16 @@
 
                     if (response.ok) {
                         // Éxito
-                        formMessage.textContent = '¡Inscripción exitosa!';
+                        formMessage.textContent = '¡Inscripción exitosa! Redirigiendo...';
                         formMessage.style.color = '#A2C53B'; // Color de acento
                         submitButton.textContent = '¡Inscrito!';
                         form.reset();
+                        
+                        // Redirigir después de un breve retraso
+                        setTimeout(() => {
+                            window.location.href = redirectUrl;
+                        }, 1000); // 1 segundo de retraso
+
                     } else {
                         // Error del servidor
                         throw new Error(`Error del servidor: ${response.status}`);
