@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción al Evento AutoDigital - Marketing & IA</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Configuración personalizada para Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#0f1419',
+                        'brand-card': '#1e2328',
+                        'brand-notice-bg': '#1a2f1f',
+                        'brand-accent': '#A2C53B',
+                        'brand-text-light': '#e2e8f0',
+                        'brand-text-gray': '#a0aec0',
+                        'brand-text-gray-light': '#cbd5e0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'accent': '0 0 15px rgba(162, 197, 59, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilo para los placeholders */
+        ::placeholder {
+            color: #718096; /* Un tono de gris de la paleta */
+            opacity: 1; 
+        }
+
+        /* Estilo para el autofill del navegador */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #1e2328 inset !important;
+            -webkit-text-fill-color: #e2e8f0 !important;
+            caret-color: #e2e8f0;
+        }
+        
+        /* Contenedor principal que escucha el hover para sombras y bordes */
+        .form-container {
+             border: 1px solid #2d3748;
+             transition: box-shadow 0.4s ease-in-out, border-color 0.4s ease-in-out;
+        }
+        .form-container:hover {
+            border-color: rgba(162, 197, 59, 0.5);
+            box-shadow: 0 0 35px rgba(162, 197, 59, 0.4);
+        }
+
+        /* Estilo de Checkbox Personalizado */
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #4A5568;
+            border-radius: 4px;
+            background-color: rgb(30 41 59 / 0.5);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .custom-checkbox:checked {
+            background-color: #A2C53B;
+            border-color: #A2C53B;
+        }
+
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid #0f1419;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        .custom-checkbox:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #1e2328, 0 0 0 4px #A2C53B;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-bg font-sans text-brand-text-light antialiased">
+
+    <div class="flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+        
+        <div class="form-container w-full max-w-lg bg-brand-card rounded-2xl p-6 sm:p-10 md:p-12 relative">
+            
+            <!-- Encabezado del Formulario -->
+            <div class="text-center">
+                <img src="https://sisplay.co/wp-content/uploads/2025/08/logo-formulario-4-e1757963286359.png" alt="Logo AutoDigital" class="mx-auto h-48 w-auto sm:h-56">
+            </div>
+
+            <!-- Formulario -->
+            <form id="registration-form" action="#" method="POST" class="space-y-6">
+
+                <!-- Nombre -->
+                <div>
+                    <label for="first-name" class="block text-sm font-medium text-white mb-2">Nombre *</label>
+                    <input type="text" name="first-name" id="first-name" placeholder="Tu nombre" required
+                           class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-brand-text-light focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition duration-300">
+                </div>
+
+                <!-- Apellido -->
+                <div>
+                    <label for="last-name" class="block text-sm font-medium text-white mb-2">Apellido *</label>
+                    <input type="text" name="last-name" id="last-name" placeholder="Tu apellido" required
+                           class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-brand-text-light focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition duration-300">
+                </div>
+
+                <!-- Telefono -->
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-white mb-2">Teléfono *</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Tu número de teléfono" required
+                           class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-brand-text-light focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition duration-300">
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-white mb-2">Correo *</label>
+                    <input type="email" name="email" id="email" placeholder="tu.correo@empresa.com" required
+                           class="w-full bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-3 text-brand-text-light focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-brand-accent transition duration-300">
+                </div>
+
+                <!-- Presencia Digital -->
+                <div>
+                    <label class="block text-sm font-medium text-white mb-2">Presencia digital *</label>
+                    <div class="space-y-3 mt-2">
+                        <div class="flex items-center">
+                            <input id="instagram" name="presencia_digital[]" type="checkbox" class="custom-checkbox">
+                            <label for="instagram" class="ml-3 block text-sm text-brand-text-light cursor-pointer">Instagram</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="facebook" name="presencia_digital[]" type="checkbox" class="custom-checkbox">
+                            <label for="facebook" class="ml-3 block text-sm text-brand-text-light cursor-pointer">Facebook</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="website" name="presencia_digital[]" type="checkbox" class="custom-checkbox">
+                            <label for="website" class="ml-3 block text-sm text-brand-text-light cursor-pointer">Página Web</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="none" name="presencia_digital[]" type="checkbox" class="custom-checkbox">
+                            <label for="none" class="ml-3 block text-sm text-brand-text-light cursor-pointer">Ninguna de estas</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div>
+                    <button id="submit-button" type="submit"
+                            class="w-full bg-brand-accent text-brand-bg font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-white hover:text-brand-bg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-brand-card focus:ring-brand-accent transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                        Inscribirme Ahora
+                    </button>
+                </div>
+                <!-- Mensaje de estado del formulario -->
+                <div id="form-message" class="text-center h-4 text-sm"></div>
+
+                <!-- Aviso de Privacidad -->
+                <div class="text-center mt-6">
+                    <p class="text-xs text-brand-text-gray">Al registrarte, aceptas nuestros <a href="#" class="text-brand-accent hover:underline">Términos de Servicio</a> y <a href="#" class="text-brand-accent hover:underline">Política de Privacidad</a>.</p>
+                </div>
+            </form>
+
+            <!-- Alerta informativa -->
+            <div class="mt-8 bg-brand-notice-bg border-l-4 border-brand-accent text-brand-text-light p-4 rounded-r-lg" role="alert">
+                <p class="font-bold">¡Cupos Limitados!</p>
+                <p class="text-sm">Asegura tu lugar Haora.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('registration-form');
+            const submitButton = document.getElementById('submit-button');
+            const formMessage = document.getElementById('form-message');
+            const webhookUrl = 'https://webhook.wipti.com/webhook/1656dd26-a811-4e62-9274-8be13142db66';
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                // Cambiar estado del botón a "enviando"
+                submitButton.disabled = true;
+                submitButton.textContent = 'Enviando...';
+                formMessage.textContent = ''; // Limpiar mensajes anteriores
+
+                // Recolectar datos del formulario
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const presenceCheckboxes = document.querySelectorAll('input[name="presencia_digital[]"]:checked');
+                const presenceDigital = Array.from(presenceCheckboxes).map(cb => {
+                    return document.querySelector(`label[for="${cb.id}"]`).textContent;
+                });
+
+                // Construir el objeto de datos
+                const payload = {
+                    nombre: firstName,
+                    apellido: lastName,
+                    telefono: phone,
+                    correo: email,
+                    presencia_digital: presenceDigital
+                };
+
+                // Enviar datos al webhook
+                try {
+                    const response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(payload),
+                    });
+
+                    if (response.ok) {
+                        // Éxito
+                        formMessage.textContent = '¡Inscripción exitosa!';
+                        formMessage.style.color = '#A2C53B'; // Color de acento
+                        submitButton.textContent = '¡Inscrito!';
+                        form.reset();
+                    } else {
+                        // Error del servidor
+                        throw new Error(`Error del servidor: ${response.status}`);
+                    }
+                } catch (error) {
+                    // Error de red u otro
+                    formMessage.textContent = 'Hubo un error. Inténtalo de nuevo.';
+                    formMessage.style.color = '#EF4444'; // Color rojo para error
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Inscribirme Ahora';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
